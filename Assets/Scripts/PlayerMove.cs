@@ -15,11 +15,11 @@ public class PlayerMove : MonoBehaviour
 	{
 		if (Input.GetKey("right"))
 		{
-			transform.position += transform.right * speed * Time.deltaTime;
+			transform.position += transform.forward * speed * Time.deltaTime;
 		}
 		if (Input.GetKey("left"))
 		{
-			transform.position -= transform.right * speed * Time.deltaTime;
+			transform.position -= transform.forward * speed * Time.deltaTime;
 		}
 		if (Input.GetKey("up"))
 		{
