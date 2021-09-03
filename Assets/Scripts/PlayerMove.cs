@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -28,6 +29,14 @@ public class PlayerMove : MonoBehaviour
 		if (Input.GetKey("down"))
 		{
 			transform.position -= transform.up * speed * Time.deltaTime;
+		}
+	}
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		if (collision.gameObject.tag == "Finish")
+		{
+			SceneManager.LoadScene("Result");
 		}
 	}
 }
