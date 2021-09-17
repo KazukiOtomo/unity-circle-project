@@ -30,7 +30,10 @@ public class PlayerMove : MonoBehaviour
 		{
 			transform.position += transform.up * speed * Time.deltaTime;
 
-			audio.PlayOneShot(jump_SE);
+			if (Input.GetKeyDown("up"))
+			{
+				audio.PlayOneShot(jump_SE);
+			}
 		}
 		if (Input.GetKey("down"))
 		{
