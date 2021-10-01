@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 public class PlayerMove : MonoBehaviour
 {
 	public float speed;
+
+	public AudioClip jump_SE;
+
+	AudioSource audio;
 	void Start()
 	{
-
+		audio = GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
@@ -25,6 +29,11 @@ public class PlayerMove : MonoBehaviour
 		if (Input.GetKey("up"))
 		{
 			transform.position += transform.up * speed * Time.deltaTime;
+
+			if (Input.GetKeyDown("up"))
+			{
+				audio.PlayOneShot(jump_SE);
+			}
 		}
 		if (Input.GetKey("down"))
 		{
