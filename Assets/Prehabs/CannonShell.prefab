@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1837063039867726246}
   m_Layer: 0
   m_Name: CannonShell
-  m_TagString: Death Decision
+  m_TagString: Dead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

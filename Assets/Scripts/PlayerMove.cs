@@ -48,7 +48,7 @@ public class PlayerMove : MonoBehaviour
 			SceneManager.LoadScene("Result");
 		}
 
-		if (collision.gameObject.tag == "Death Decision")
+		if (collision.gameObject.tag == "Dead")
         {
 			transform.position = new Vector3(-20f, 3f, 0f);
 			Destroy(collision.gameObject);
