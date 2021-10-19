@@ -50,7 +50,7 @@ public class PlayerMove : MonoBehaviour
 
 		if (collision.gameObject.tag == "Dead")
 		{
-			transform.position = new Vector3(-20, 3, -18);
+			transform.position = new Vector3(-20, 3, 0);
 		}
 	}
 }
