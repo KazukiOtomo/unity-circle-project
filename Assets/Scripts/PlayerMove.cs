@@ -38,5 +38,9 @@ public class PlayerMove : MonoBehaviour
 		{
 			SceneManager.LoadScene("Result");
 		}
+		if (collision.gameObject.tag == "Dead")
+		{
+			transform.position = new Vector3(-20, 3, 0);
+		}
 	}
 }
