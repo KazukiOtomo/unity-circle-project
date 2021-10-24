@@ -21,6 +21,6 @@ public class CannonLaunch : MonoBehaviour
     void Factory()
     {
         GameObject g = Instantiate(shell);
-        g.transform.position = this.gameObject.transform.position + new Vector3(-1.4f, 0.9f, 0f);
+        g.transform.position = this.gameObject.transform.position;// + new Vector3(-1.4f, 0.9f, 0f);
     }
 }

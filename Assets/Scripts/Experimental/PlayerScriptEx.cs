@@ -7,6 +7,9 @@ public class PlayerScriptEx : MonoBehaviour
 {
 	private CharacterController controller;
 
+	public Vector3 startPoint = new Vector3(-60, 2, 0);//初期スタート地点用座標
+	public float deathHeight = -30f;
+
 	public Vector3 movedir = Vector3.zero;
 	public Vector3 masterdir = Vector3.zero;
 	public float jumpSpeed = 25f;
@@ -19,11 +22,12 @@ public class PlayerScriptEx : MonoBehaviour
     private void Start()
     {
 		controller = GetComponent<CharacterController>();
+
+		Death();
     }
 
-    private void Update()
-    {
-		Debug.Log(Time.deltaTime);
+	private void Update()
+	{
 		//ジャンプ
 		if (Input.GetKeyDown("up") && controller.isGrounded)
 		{
@@ -45,13 +49,13 @@ public class PlayerScriptEx : MonoBehaviour
 
 		//横移動
 		movedir.z = moveSpeed * Input.GetAxis("Horizontal");
-			//Transformコンポーネントよりy軸に90度回転しているため、z方向にベクトルを設定している。
-				//プレイヤーの向きを移動方向へ合わせるシステムをつくる場合は、PlayerScriptExにて使用する関数を再検討するが必要あるかも。
+		//Transformコンポーネントよりy軸に90度回転しているため、z方向にベクトルを設定している。
+		//プレイヤーの向きを移動方向へ合わせるシステムをつくる場合は、PlayerScriptExにて使用する関数を再検討するが必要あるかも。
 
-        //重力
-        movedir.y -= gravity * Time.deltaTime;
+		//重力
+		movedir.y -= gravity * Time.deltaTime;
 
-        masterdir = transform.TransformDirection(movedir)*Time.deltaTime;
+		masterdir = transform.TransformDirection(movedir) * Time.deltaTime;
 		controller.Move(masterdir);
 
 		if (controller.isGrounded)
@@ -59,92 +63,29 @@ public class PlayerScriptEx : MonoBehaviour
 			movedir.y = 0f;
 			jumping = false;
 		}
+
+		if (this.gameObject.transform.position.y <= -30f)
+		{
+			Death();
+		}
 	}
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-		if (collision.gameObject.tag == "Finish")
-		{
-			SceneManager.LoadScene("Result");
+        if (hit.gameObject.tag == "Dead")
+        {
+			Death();
+			//this.gameObject.transform.position = startPoint;
 		}
 
-		if (collision.gameObject.tag == "Dead")
-		{
-			transform.position = new Vector3(-20, 3, -18);
-		}
+		if(hit.gameObject.tag == "Finish")
+        {
+			SceneManager.LoadScene("Result");
+        }
     }
 
-
-    /*
-	public float speed;
-	public AudioClip jump_SE;
-	AudioSource audio;
-	public bool onGround;
-	private Rigidbody rb = null;
-
-	
-
-	void Start()
+	private void Death()
 	{
-		audio = GetComponent<AudioSource>();
-		rb = GetComponent<Rigidbody>();
+		this.gameObject.transform.position = startPoint;
 	}
-
-	void Update()
-	{
-		//横移動
-		if (Input.GetKey("right"))
-		{
-			transform.position += transform.forward * speed * Time.deltaTime;
-		}
-		if (Input.GetKey("left"))
-		{
-			transform.position -= transform.forward * speed * Time.deltaTime;
-		}
-
-		//ジャンプ
-        if (Input.GetKeyDown("up"))
-        {
-			inputJumpButton = true;
-        }
-        if (Input.GetKeyUp("up"))
-        {
-			inputJumpButton = false;
-		}
-
-        if (onGround == true)
-        {
-			Debug.Log("接地");
-        }
-	}
-
-	private void OnCollisionEnter(Collision collision)
-	{
-		if (collision.gameObject.tag == "Finish")
-		{
-			SceneManager.LoadScene("Result");
-		}
-
-		if (collision.gameObject.tag == "Dead")
-		{
-			transform.position = new Vector3(-20, 3, -18);
-		}
-	}
-
-    private void OnCollisionStay(Collision collision)
-    {
-		if (collision.gameObject.tag == "Ground")
-		{
-			onGround = true;
-		}
-	}
-
-    private void OnCollisionExit(Collision collision)
-    {
-		if (collision.gameObject.tag == "Ground")
-		{
-			onGround = false;
-		}
-	}
-	*/
 }
