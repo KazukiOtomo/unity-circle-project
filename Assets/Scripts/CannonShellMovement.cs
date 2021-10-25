@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class CannonShellMovement : MonoBehaviour
 {
-    private Vector3 shellMoving = new Vector3(0f, 0f, 0f);
 
-    private float shellSpeed = -15f;
     // Start is called before the first frame update
 
     void Start()
@@ -16,7 +14,6 @@ public class CannonShellMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shellMoving.x += shellSpeed * Time.deltaTime;
-        this.transform.position = shellMoving;
+        this.gameObject.transform.position += new Vector3(-15f, 0f, 0f) * Time.deltaTime;
     }
 }

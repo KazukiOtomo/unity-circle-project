@@ -75,7 +75,6 @@ public class PlayerScriptEx : MonoBehaviour
         if (hit.gameObject.tag == "Dead")
         {
 			Death();
-			//this.gameObject.transform.position = startPoint;
 		}
 
 		if(hit.gameObject.tag == "Finish")
@@ -84,7 +83,7 @@ public class PlayerScriptEx : MonoBehaviour
         }
     }
 
-	private void Death()
+    private void Death()
 	{
 		this.gameObject.transform.position = startPoint;
 	}
