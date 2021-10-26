@@ -11,12 +11,13 @@ public class CannonLaunch : MonoBehaviour
     void Start()
     {
         InvokeRepeating("Factory", 0f, 1.5f);
+        p = gameObject.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        p = gameObject.transform.position;
+
     }
 
     private void Factory()

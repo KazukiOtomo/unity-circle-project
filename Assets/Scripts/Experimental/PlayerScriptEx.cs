@@ -17,12 +17,12 @@ public class PlayerScriptEx : MonoBehaviour
 	public float gravity = 50f;
 
 	private bool jumping = true;
+	private bool jumppadHit = false;
 	private float jumpInputingTime;
 
     private void Start()
     {
 		controller = GetComponent<CharacterController>();
-
 		Death();
     }
 
@@ -55,14 +55,20 @@ public class PlayerScriptEx : MonoBehaviour
 		//重力
 		movedir.y -= gravity * Time.deltaTime;
 
-		masterdir = transform.TransformDirection(movedir) * Time.deltaTime;
-		controller.Move(masterdir);
+		//masterdir = transform.TransformDirection(movedir) * Time.deltaTime;
+		controller.Move(transform.TransformDirection(movedir) * Time.deltaTime);
 
 		if (controller.isGrounded)
 		{
 			movedir.y = 0f;
 			jumping = false;
 		}
+
+		if (jumppadHit)
+        {
+			movedir.y = 30f;
+			jumppadHit = false;
+        }
 
 		if (this.gameObject.transform.position.y <= -30f)
 		{
@@ -77,9 +83,14 @@ public class PlayerScriptEx : MonoBehaviour
 			Death();
 		}
 
-		if(hit.gameObject.tag == "Finish")
+		if (hit.gameObject.tag == "Finish")
         {
 			SceneManager.LoadScene("Result");
+        }
+
+		if (hit.gameObject.tag == "Jumppad")
+        {
+			jumppadHit = true;
         }
     }
 
