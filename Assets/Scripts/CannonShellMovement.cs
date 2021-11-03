@@ -14,6 +14,14 @@ public class CannonShellMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.position += new Vector3(-15f, 0f, 0f) * Time.deltaTime;
+        this.gameObject.transform.position += new Vector3(-10f, 0f, 0f) * Time.deltaTime;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

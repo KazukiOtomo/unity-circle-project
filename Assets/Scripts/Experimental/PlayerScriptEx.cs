@@ -7,14 +7,16 @@ public class PlayerScriptEx : MonoBehaviour
 {
 	private CharacterController controller;
 
-	public Vector3 startPoint = new Vector3(-60, 2, 0);//初期スタート地点用座標
-	public float deathHeight = -30f;
+	[SerializeField] private Vector3 startPoint = new Vector3(-60, 2, 0);//初期スタート地点用座標
+	[SerializeField] private float deathHeight = -30f;
 
-	public Vector3 movedir = Vector3.zero;
-	public Vector3 masterdir = Vector3.zero;
-	public float jumpSpeed = 25f;
-	public float moveSpeed = 15f;
-	public float gravity = 50f;
+	[SerializeField] private Vector3 movedir = Vector3.zero;
+	[SerializeField] private float jumpSpeed = 25f;
+    [SerializeField] private float moveSpeed = 15f;
+    [SerializeField] private float gravity = 50f;
+
+	public AudioClip jump_SE;
+	private AudioSource audio;
 
 	private bool jumping = true;
 	private bool jumppadHit = false;
@@ -23,6 +25,7 @@ public class PlayerScriptEx : MonoBehaviour
     private void Start()
     {
 		controller = GetComponent<CharacterController>();
+		audio = GetComponent<AudioSource>();
 		Death();
     }
 
@@ -31,6 +34,7 @@ public class PlayerScriptEx : MonoBehaviour
 		//ジャンプ
 		if (Input.GetKeyDown("up") && controller.isGrounded)
 		{
+			audio.PlayOneShot(jump_SE);
 			jumping = true;
 			jumpInputingTime = 0;
 		}
@@ -70,8 +74,9 @@ public class PlayerScriptEx : MonoBehaviour
 			jumppadHit = false;
         }
 
-		if (this.gameObject.transform.position.y <= -30f)
+		if (this.gameObject.transform.position.y <= deathHeight)
 		{
+			Debug.Log("Fall");
 			Death();
 		}
 	}
@@ -80,6 +85,7 @@ public class PlayerScriptEx : MonoBehaviour
     {
         if (hit.gameObject.tag == "Dead")
         {
+			Debug.Log(hit.gameObject.name);
 			Death();
 		}
 

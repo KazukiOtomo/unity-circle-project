@@ -7,17 +7,10 @@ public class CannonLaunch : MonoBehaviour
     public GameObject shell;
     private Vector3 p = new Vector3();
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         InvokeRepeating("Factory", 0f, 1.5f);
         p = gameObject.transform.position;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void Factory()
