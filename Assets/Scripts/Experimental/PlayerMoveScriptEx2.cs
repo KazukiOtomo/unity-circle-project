@@ -6,55 +6,84 @@ using UnityEngine.SceneManagement;
 public class PlayerMoveScriptEx2: MonoBehaviour
 {
     [SerializeField] private Vector3 startPoint = new Vector3(0f, 2f, 0f);
-    [SerializeField] private float deathHeight = -100;
+    [SerializeField] private float deathHeight = -60;
     [SerializeField] private float playerSpeed = 15;
     [SerializeField] private float playerJumpPower = 14;
     [SerializeField] private float gravityPower = 16;
 
-    [SerializeField] private AudioClip jump_SE;
-    [SerializeField] private GroundCheckerScript groundChecker;
+    [SerializeField] public AudioClip jumpSE;
+    [SerializeField] public AudioClip jumppadSE;
+
+    [SerializeField] private FeetCheckerScript feetChecker;
 
     private bool isGround;
-    private bool jumping;
-    private bool jumppadHit = false;
+
+    private bool isJumppad;
+    private bool jumppadSEPlayed = false;
 
     private float Horizontal;
     private bool Jump;
 
+    private bool jumping;
     private float jumpInputTime;
 
     private Rigidbody rb;
-    private AudioSource audio;
+    private new AudioSource audio;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
         rb.velocity = Vector3.zero;
+
+        //プレイヤー位置の初期化
+        Death();
     }
 
     private void Update()
     {
-        if(transform.position.y <= deathHeight) { Death(); }
-        isGround = groundChecker.IsGround();
-        Horizontal = Input.GetAxis("Horizontal");
-        Jump = Input.GetButton("Jump");
-        Move(Horizontal, Jump);
-        Gravity();
+        isGround = feetChecker.IsGround();
+        isJumppad = feetChecker.IsJumppad();
 
-        Debug.Log(rb.velocity.y);
+        //プレイヤー操作
+        Horizontal = Input.GetAxis("Horizontal 1");
+        Jump = Input.GetButton("Jump 1");
+        Move(Horizontal, Jump);
+
+        //落下死
+        if (transform.position.y <= deathHeight) { Death(); }
+
+        //トランポリン
+        if (isJumppad == true)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, 30f, 0f);
+            if(!jumppadSEPlayed)
+            {
+                audio.PlayOneShot(jumppadSE);
+                jumppadSEPlayed = true;
+            }
+        }
+        else
+        {
+            jumppadSEPlayed = false;
+        }
+
+        Gravity();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Jumppad") { rb.AddForce(transform.up * 10f, ForceMode.VelocityChange); }
+        //トラップ
         if (collision.gameObject.tag == "Dead")
         {
+
             Death();
         }
 
+        //ゴールの処理
         if (collision.gameObject.tag == "Finish")
         {
+
             SceneManager.LoadScene("Result");
         }
     }
@@ -63,7 +92,7 @@ public class PlayerMoveScriptEx2: MonoBehaviour
     {
         if (isGround && jump && !jumping)
         {
-            audio.PlayOneShot(jump_SE);
+            audio.PlayOneShot(jumpSE);
             jumping = true;
             jumpInputTime = 0f;
         }
@@ -86,7 +115,11 @@ public class PlayerMoveScriptEx2: MonoBehaviour
 
     private void Gravity()
     {
-        if(rb.velocity.y <= -30f) { return; }
+        if(rb.velocity.y <= -30f)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, -30f, 0f);
+            return;
+        }
         if (!isGround)
         {
             rb.AddForce(new Vector3(0f, -gravityPower, 0f));

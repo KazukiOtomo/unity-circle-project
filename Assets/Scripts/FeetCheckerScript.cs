@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundCheckerScript : MonoBehaviour
+public class FeetCheckerScript : MonoBehaviour
 {
     private string ground = "Ground";
     private bool isGround = false;
     private bool isGroundEnter, isGroundStay, isGroundExit;
+
+    private string jumppad = "Jumppad";
+    private bool isJumppad = false;
+    private bool isJumppadEnter, isJumppadExit;
 
     public bool IsGround()
     {
@@ -25,11 +29,33 @@ public class GroundCheckerScript : MonoBehaviour
         return isGround;
     }
 
+    public bool IsJumppad()
+    {
+        if (isJumppadEnter)
+        {
+            isJumppad = true;
+        }
+        else if (isJumppadExit)
+        {
+            isJumppad = false;
+        }
+
+        isJumppadEnter = false;
+        isJumppadExit = false;
+
+        return isJumppad;
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == ground)
         {
             isGroundEnter = true;
+        }
+
+        if(collision.tag == jumppad)
+        {
+            isJumppadEnter = true;
         }
     }
 
@@ -46,6 +72,11 @@ public class GroundCheckerScript : MonoBehaviour
         if (collision.tag == ground)
         {
             isGroundExit = true;
+        }
+
+        if(collision.tag == jumppad)
+        {
+            isJumppadExit = true;
         }
     }
 }
