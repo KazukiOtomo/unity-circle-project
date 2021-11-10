@@ -120,10 +120,7 @@ public class PlayerMoveScriptEx2: MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, -30f, 0f);
             return;
         }
-        if (!isGround)
-        {
-            rb.AddForce(new Vector3(0f, -gravityPower, 0f));
-        }
+        rb.AddForce(new Vector3(0f, -gravityPower, 0f));
     }
 
     private void Death()
