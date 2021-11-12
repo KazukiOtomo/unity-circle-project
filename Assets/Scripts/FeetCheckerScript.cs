@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class FeetCheckerScript : MonoBehaviour
 {
+    [SerializeField] private bool isGround = false;
     private string ground = "Ground";
-    private bool isGround = false;
     private bool isGroundEnter, isGroundStay, isGroundExit;
 
+    [SerializeField] private bool isJumppad = false;
     private string jumppad = "Jumppad";
-    private bool isJumppad = false;
-    private bool isJumppadEnter, isJumppadExit;
+    private bool isJumppadEnter, isJumppadStay, isJumppadExit;
 
     public bool IsGround()
     {
@@ -26,6 +26,7 @@ public class FeetCheckerScript : MonoBehaviour
         isGroundEnter = false;
         isGroundStay = false;
         isGroundExit = false;
+
         return isGround;
     }
 
@@ -41,6 +42,7 @@ public class FeetCheckerScript : MonoBehaviour
         }
 
         isJumppadEnter = false;
+        isJumppadStay = false;
         isJumppadExit = false;
 
         return isJumppad;
@@ -56,6 +58,7 @@ public class FeetCheckerScript : MonoBehaviour
         if(collision.tag == jumppad)
         {
             isJumppadEnter = true;
+            Debug.Log("enter");
         }
     }
 
@@ -64,6 +67,12 @@ public class FeetCheckerScript : MonoBehaviour
         if (collision.tag == ground)
         {
             isGroundStay = true;
+        }
+
+        if (collision.tag == jumppad)
+        {
+            isJumppadStay = true;
+            Debug.Log("stay");
         }
     }
 
@@ -77,6 +86,7 @@ public class FeetCheckerScript : MonoBehaviour
         if(collision.tag == jumppad)
         {
             isJumppadExit = true;
+            Debug.Log("exit");
         }
     }
 }

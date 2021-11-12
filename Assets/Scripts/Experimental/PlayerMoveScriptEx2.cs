@@ -16,10 +16,9 @@ public class PlayerMoveScriptEx2: MonoBehaviour
 
     [SerializeField] private FeetCheckerScript feetChecker;
 
-    private bool isGround;
-
-    private bool isJumppad;
-    private bool jumppadSEPlayed = false;
+    [SerializeField] private bool isGround;
+    [SerializeField] private bool isJumppad = false;
+    private bool jumppadEnd = true;
 
     private float Horizontal;
     private bool Jump;
@@ -42,9 +41,10 @@ public class PlayerMoveScriptEx2: MonoBehaviour
 
     private void Update()
     {
+        var animator = this.gameObject.GetComponent<Animator>();
+
         isGround = feetChecker.IsGround();
         isJumppad = feetChecker.IsJumppad();
-
         //プレイヤー操作
         Horizontal = Input.GetAxis("Horizontal 1");
         Jump = Input.GetButton("Jump 1");
@@ -56,16 +56,26 @@ public class PlayerMoveScriptEx2: MonoBehaviour
         //トランポリン
         if (isJumppad == true)
         {
-            rb.velocity = new Vector3(rb.velocity.x, 30f, 0f);
-            if(!jumppadSEPlayed)
+            //rb.velocity = new Vector3(rb.velocity.x, 30f, 0f);
+            if (!jumppadEnd)
             {
+                rb.velocity = new Vector3(rb.velocity.x, 30f, 0f);
                 audio.PlayOneShot(jumppadSE);
-                jumppadSEPlayed = true;
+                jumppadEnd = true;
             }
         }
         else
         {
-            jumppadSEPlayed = false;
+            jumppadEnd = false;
+        }
+
+        if (rb.velocity.x <= 0.1f && rb.velocity.x >= -0.1f)
+        {
+            animator.SetBool("Mooving", false);
+        }
+        else
+        {
+            animator.SetBool("Mooving", true);
         }
 
         Gravity();
