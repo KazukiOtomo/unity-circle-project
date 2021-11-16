@@ -1,92 +1,43 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FeetCheckerScript : MonoBehaviour
 {
     [SerializeField] private bool isGround = false;
-    private string ground = "Ground";
-    private bool isGroundEnter, isGroundStay, isGroundExit;
-
     [SerializeField] private bool isJumppad = false;
-    private string jumppad = "Jumppad";
-    private bool isJumppadEnter, isJumppadStay, isJumppadExit;
-
-    public bool IsGround()
+    public bool IsJumppad
     {
-        if (isGroundEnter || isGroundStay)
+        get => isJumppad;
+        set => isJumppad = value;
+    }
+
+    public bool IsGround
+    {
+        get => isGround;
+        set => isGround = value;
+    }
+    
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isGround = true;
         }
-        else if (isGroundExit)
-        {
-            isGround = false;
-        }
 
-        isGroundEnter = false;
-        isGroundStay = false;
-        isGroundExit = false;
-
-        return isGround;
-    }
-
-    public bool IsJumppad()
-    {
-        if (isJumppadEnter)
+        if (collision.gameObject.CompareTag("Jumppad"))
         {
             isJumppad = true;
-        }
-        else if (isJumppadExit)
-        {
-            isJumppad = false;
-        }
-
-        isJumppadEnter = false;
-        isJumppadStay = false;
-        isJumppadExit = false;
-
-        return isJumppad;
-    }
-
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.tag == ground)
-        {
-            isGroundEnter = true;
-        }
-
-        if(collision.tag == jumppad)
-        {
-            isJumppadEnter = true;
-            Debug.Log("enter");
-        }
-    }
-
-    private void OnTriggerStay(Collider collision)
-    {
-        if (collision.tag == ground)
-        {
-            isGroundStay = true;
-        }
-
-        if (collision.tag == jumppad)
-        {
-            isJumppadStay = true;
-            Debug.Log("stay");
         }
     }
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.tag == ground)
-        {
-            isGroundExit = true;
-        }
 
-        if(collision.tag == jumppad)
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            isJumppadExit = true;
-            Debug.Log("exit");
+            isGround = false;
         }
     }
 }
