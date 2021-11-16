@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gear : MonoBehaviour
+public class OnoScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,6 +13,6 @@ public class Gear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0f, 1f, 0f));
+        transform.Rotate(new Vector3(0f, 0f, 150f) * Time.deltaTime);
     }
 }

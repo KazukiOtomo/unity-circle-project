@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CannonShellMovement : MonoBehaviour
 {
-    int n = 0;
+
     // Start is called before the first frame update
 
     void Start()
@@ -14,7 +14,14 @@ public class CannonShellMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var shellMovement = new Vector3(-0.01f, 0f, 0f);
-        transform.Translate(shellMovement);
+        this.gameObject.transform.position += new Vector3(-10f, 0f, 0f) * Time.deltaTime;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
