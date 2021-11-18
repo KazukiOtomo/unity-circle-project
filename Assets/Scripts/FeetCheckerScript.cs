@@ -7,18 +7,20 @@ public class FeetCheckerScript : MonoBehaviour
 {
     [SerializeField] private bool isGround = false;
     [SerializeField] private bool isJumppad = false;
+
     public bool IsJumppad
     {
         get => isJumppad;
         set => isJumppad = value;
     }
-
+    
     public bool IsGround
     {
         get => isGround;
         set => isGround = value;
+        
     }
-    
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
