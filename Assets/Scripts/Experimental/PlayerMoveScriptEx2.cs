@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerMoveScriptEx2: MonoBehaviour
@@ -29,11 +30,15 @@ public class PlayerMoveScriptEx2: MonoBehaviour
     private Rigidbody rb;
     private new AudioSource audio;
 
+    private Text text;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
         rb.velocity = Vector3.zero;
+
+        text = GameObject.Find("Text").GetComponent<Text>();
 
         //プレイヤー位置の初期化
         Death();
@@ -79,6 +84,8 @@ public class PlayerMoveScriptEx2: MonoBehaviour
         }
 
         Gravity();
+
+        //text.text = $"Velocity Y = {rb.velocity.y}\nAddForce Y = {gravityPower - Physics.gravity.y}";
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -130,7 +137,7 @@ public class PlayerMoveScriptEx2: MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, -30f, 0f);
             return;
         }
-        rb.AddForce(new Vector3(0f, -gravityPower, 0f));
+        rb.AddForce(new Vector3(0f, -gravityPower * Time.deltaTime, 0f));
     }
 
     private void Death()

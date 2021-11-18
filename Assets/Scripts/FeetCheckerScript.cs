@@ -22,6 +22,10 @@ public class FeetCheckerScript : MonoBehaviour
         {
             isGround = false;
         }
+        else
+        {
+            isGround = false;
+        }
 
         isGroundEnter = false;
         isGroundStay = false;
