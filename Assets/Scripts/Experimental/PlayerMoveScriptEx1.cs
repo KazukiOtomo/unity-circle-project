@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerMoveScriptEx2: MonoBehaviour
+public class PlayerMoveScriptEx1 : MonoBehaviour
 {
     [SerializeField] private Vector3 startPoint = new Vector3(0f, 2f, 0f);
     [SerializeField] private float deathHeight = -40;
@@ -30,7 +30,7 @@ public class PlayerMoveScriptEx2: MonoBehaviour
         audio = GetComponent<AudioSource>();
         rb.velocity = Vector3.zero;
         animator = gameObject.GetComponent<Animator>();
-        
+
         ResetPosition();
     }
 
@@ -38,7 +38,7 @@ public class PlayerMoveScriptEx2: MonoBehaviour
     {
         isGround = feetChecker.IsGround;
         isJumppad = feetChecker.IsJumppad;
-        
+
         //プレイヤー操作
         Move();
 
@@ -57,12 +57,12 @@ public class PlayerMoveScriptEx2: MonoBehaviour
 
         Gravity();
     }
-    
+
     private void Move()
     {
-        float move = Input.GetAxis("Horizontal 2");
-        bool jump = Input.GetButton("Jump 2");
-        
+        float move = Input.GetAxis("Horizontal 1");
+        bool jump = Input.GetButton("Jump 1");
+
         if (isGround && jump)
         {
             audio.PlayOneShot(jumpSE);
@@ -74,11 +74,11 @@ public class PlayerMoveScriptEx2: MonoBehaviour
 
     IEnumerator JumpingMove()
     {
-        float jumpTime=0f;
+        float jumpTime = 0f;
         while (jumpTime <= 0.25f)
         {
-            bool jump = Input.GetButton("Jump 2");
-            if(jump) rb.velocity = new Vector3(rb.velocity.x, playerJumpPower, 0f);
+            bool jump = Input.GetButton("Jump 1");
+            if (jump) rb.velocity = new Vector3(rb.velocity.x, playerJumpPower, 0f);
             jumpTime += Time.deltaTime;
             yield return null;
         }
@@ -101,7 +101,7 @@ public class PlayerMoveScriptEx2: MonoBehaviour
 
     private void Gravity()
     {
-        if(rb.velocity.y <= -30f)
+        if (rb.velocity.y <= -30f)
         {
             rb.velocity = new Vector3(rb.velocity.x, -30f, 0f);
             return;
@@ -112,7 +112,7 @@ public class PlayerMoveScriptEx2: MonoBehaviour
     private void Death()
     {
         //show something action like "GAME OVER"
-        
+
         ResetPosition();
     }
 
