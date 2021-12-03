@@ -10,12 +10,13 @@ public class CannonLaunch : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("Factory", 0f, 1.5f);
-        p = gameObject.transform.position;
     }
 
     private void Factory()
     {
+        p = gameObject.transform.position;
+
         GameObject g = Instantiate(shell);
-        g.transform.position = p + new Vector3(-0.5f, 0f, 0f);
+        g.transform.position = p + new Vector3(-1f, 0f, 0f);
     }
 }
