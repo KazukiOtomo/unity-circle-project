@@ -20,8 +20,13 @@ public class TitleManagerScript : MonoBehaviour
 
     [SerializeField] private int playerCount = 4;
 
+    public GameObject[] playerSlots = new GameObject[8];
+
     [SerializeField] private GameObject PlayerNumber;
     private Text playerNumber = null;
+
+    public int blueCaptureCount;
+    public int blueSabotageCount;
 
     private void Start()
     {
@@ -35,6 +40,7 @@ public class TitleManagerScript : MonoBehaviour
     private void Update()
     {
         playerNumber.text = playerCount.ToString();
+         //for(int i = 2;i <= playerCount)
     }
 
     private void PlayerSave()
@@ -51,6 +57,7 @@ public class TitleManagerScript : MonoBehaviour
             return;
         }
         playerCount++;
+        playerSlots[playerCount - 1].SetActive(true);
     }
 
     //ボタン用【PlayerDown】
@@ -61,6 +68,15 @@ public class TitleManagerScript : MonoBehaviour
             playerCount = 2;
             return;
         }
+        playerSlots[playerCount - 1].SetActive(false);
         playerCount--;
+    }
+
+    
+
+    private string Horizontal(int i)
+    {
+        string c = "Horizontal " + i;
+        return c;
     }
 }
