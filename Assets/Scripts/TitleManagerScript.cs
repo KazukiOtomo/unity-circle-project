@@ -1,13 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TitleManagerScript : MonoBehaviour
 {
-    [SerializeField] private int playerCount = 4;
-
     //---------------------------------------------//
 
     //Playerごとの名前
@@ -16,51 +13,34 @@ public class TitleManagerScript : MonoBehaviour
     //Playerごとのチーム分け
     [SerializeField] private static int[] playerTeam = new int[8];
 
-    //
-    [SerializeField] List<Toggle> playerRolls;
-
     //Playerごとのコントローラー
     [SerializeField] private static int[] playerController = new int[8];
 
     //---------------------------------------------//
 
+    [SerializeField] private int playerCount = 4;
+
     public GameObject[] playerSlots = new GameObject[8];
 
-    [SerializeField] private GameObject playerCounterUI;
+    [SerializeField] private GameObject PlayerNumber;
     private Text playerNumber = null;
 
     public int blueCaptureCount;
     public int blueSabotageCount;
 
-    private bool[] roll = new bool[8];
-    private Toggle[] toggle = new Toggle[8];
-
     private void Start()
     {
-        playerNumber = playerCounterUI.GetComponent<Text>();
+        playerNumber = PlayerNumber.GetComponent<Text>();
         for (int i = 0; i < 8; i++)
         {
-            playerNames[i] = "Player" + (i + 1);
-        }
-
-        /*
-        for (int i = 0; i < 8; i++)
-        {
-            toggle[i] = playerRolls[i].GetToggles().First();
-            Debug.Log(toggle[i].);
-        }
-        */
-
-        foreach (var item in playerRolls[0].GetToggles())
-        {
-            //Debug.Log(item.name);
+            playerNames[i] = "Player" + i;
         }
     }
 
     private void Update()
     {
         playerNumber.text = playerCount.ToString();
-        //Debug.Log(playerRolls[0].GetComponent<ToggleGroup>().ActiveToggles().FirstOrDefault());
+         //for(int i = 2;i <= playerCount)
     }
 
     private void PlayerSave()
@@ -83,14 +63,16 @@ public class TitleManagerScript : MonoBehaviour
     //ボタン用【PlayerDown】
     public void PlayerCountDown()
     {
-        if(playerCount <= 4)
+        if(playerCount <= 2)
         {
-            playerCount = 4;
+            playerCount = 2;
             return;
         }
         playerSlots[playerCount - 1].SetActive(false);
         playerCount--;
     }
+
+    
 
     private string Horizontal(int i)
     {

@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerMoveScriptEx : MonoBehaviour
+public class PlayerMoveScriptEx1 : MonoBehaviour
 {
-    [SerializeField] private int player = 1;
-
     [SerializeField] private Vector3 startPoint = new Vector3(0f, 2f, 0f);
     [SerializeField] private float deathHeight = -40;
     [SerializeField] private float playerSpeed = 15;
@@ -62,8 +60,8 @@ public class PlayerMoveScriptEx : MonoBehaviour
 
     private void Move()
     {
-        float move = Input.GetAxis("Horizontal " + player);
-        bool jump = Input.GetButton("Jump " + player);
+        float move = Input.GetAxis("Horizontal 1");
+        bool jump = Input.GetButton("Jump 1");
 
         if (isGround && jump)
         {
@@ -79,7 +77,7 @@ public class PlayerMoveScriptEx : MonoBehaviour
         float jumpTime = 0f;
         while (jumpTime <= 0.25f)
         {
-            bool jump = Input.GetButton("Jump " + player);
+            bool jump = Input.GetButton("Jump 1");
             if (jump) rb.velocity = new Vector3(rb.velocity.x, playerJumpPower, 0f);
             jumpTime += Time.deltaTime;
             yield return null;
