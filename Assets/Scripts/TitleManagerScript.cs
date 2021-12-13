@@ -17,7 +17,7 @@ public class TitleManagerScript : MonoBehaviour
     [SerializeField] private static int[] playerTeam = new int[8];
 
     //
-    [SerializeField] List<Toggle> playerRolls;
+    [SerializeField] private Toggle[] playerRolls = new Toggle[16];
 
     //Playerごとのコントローラー
     [SerializeField] private static int[] playerController = new int[8];
@@ -29,11 +29,10 @@ public class TitleManagerScript : MonoBehaviour
     [SerializeField] private GameObject playerCounterUI;
     private Text playerNumber = null;
 
-    public int blueCaptureCount;
-    public int blueSabotageCount;
-
-    private bool[] roll = new bool[8];
-    private Toggle[] toggle = new Toggle[8];
+    public int blueCaptureCount = 0;
+    public int blueSabotageCount = 0;
+    public int redCaptureCount = 0;
+    public int redSabotageCount = 0;
 
     private void Start()
     {
@@ -43,18 +42,7 @@ public class TitleManagerScript : MonoBehaviour
             playerNames[i] = "Player" + (i + 1);
         }
 
-        /*
-        for (int i = 0; i < 8; i++)
-        {
-            toggle[i] = playerRolls[i].GetToggles().First();
-            Debug.Log(toggle[i].);
-        }
-        */
 
-        foreach (var item in playerRolls[0].GetToggles())
-        {
-            //Debug.Log(item.name);
-        }
     }
 
     private void Update()
