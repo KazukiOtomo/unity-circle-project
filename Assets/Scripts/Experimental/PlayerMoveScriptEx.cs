@@ -25,6 +25,8 @@ public class PlayerMoveScriptEx : MonoBehaviour
     private new AudioSource audio;
 
     private Animator animator;
+    
+    private Joycon _joycon;
 
     private void Start()
     {
@@ -38,6 +40,7 @@ public class PlayerMoveScriptEx : MonoBehaviour
 
     private void Update()
     {
+        if (_joycon == null)_joycon = GetComponent<JoyconDemo>().getJoycon();
         isGround = feetChecker.IsGround;
         isJumppad = feetChecker.IsJumppad;
 
