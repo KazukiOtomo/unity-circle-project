@@ -25,6 +25,7 @@ public class PlayerMoveScriptEx : MonoBehaviour
     private new AudioSource audio;
 
     private Animator animator;
+    
 
     private void Start()
     {
@@ -62,8 +63,9 @@ public class PlayerMoveScriptEx : MonoBehaviour
 
     private void Move()
     {
-        float move = Input.GetAxis("Horizontal " + player);
-        bool jump = Input.GetButton("Jump " + player);
+        float move = InputController.instance.GETMove(player);
+        bool jump = InputController.instance.GETJump(player);
+        //Inputcontroller.getMove[player] 
 
         if (isGround && jump)
         {
@@ -79,7 +81,7 @@ public class PlayerMoveScriptEx : MonoBehaviour
         float jumpTime = 0f;
         while (jumpTime <= 0.25f)
         {
-            bool jump = Input.GetButton("Jump " + player);
+            bool jump = InputController.instance.GETJump(player);
             if (jump) rb.velocity = new Vector3(rb.velocity.x, playerJumpPower, 0f);
             jumpTime += Time.deltaTime;
             yield return null;
