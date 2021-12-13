@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -366,6 +366,7 @@ GameObject:
   - component: {fileID: 119822067}
   - component: {fileID: 119822069}
   - component: {fileID: 119822068}
+  - component: {fileID: 119822070}
   m_Layer: 5
   m_Name: PlayerSlot7
   m_TagString: Untagged
@@ -431,6 +432,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119822066}
   m_CullTransparentMesh: 0
+--- !u!114 &119822070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119822066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0806273f2a926f4cbda7cd234786572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRollToggle:
+  - {fileID: 2034223890}
+  - {fileID: 2141541479}
+  capture: 0
+  sabotage: 0
 --- !u!1 &127671348
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,8 +533,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 292731355}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -565,7 +583,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136691784}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 103.029465}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 404088688}
@@ -878,8 +896,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 582206339}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1030,6 +1048,7 @@ GameObject:
   - component: {fileID: 292731352}
   - component: {fileID: 292731354}
   - component: {fileID: 292731353}
+  - component: {fileID: 292731355}
   m_Layer: 5
   m_Name: PlayerSlot6
   m_TagString: Untagged
@@ -1095,6 +1114,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292731351}
   m_CullTransparentMesh: 0
+--- !u!114 &292731355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292731351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0806273f2a926f4cbda7cd234786572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRollToggle:
+  - {fileID: 127671350}
+  - {fileID: 330653846}
+  capture: 0
+  sabotage: 0
 --- !u!1 &330653844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,8 +1215,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 292731355}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2024,8 +2060,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 930130398}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2120,8 +2156,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 682034063}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2194,6 +2230,7 @@ GameObject:
   - component: {fileID: 582206336}
   - component: {fileID: 582206338}
   - component: {fileID: 582206337}
+  - component: {fileID: 582206339}
   m_Layer: 5
   m_Name: PlayerSlot8
   m_TagString: Untagged
@@ -2259,6 +2296,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582206335}
   m_CullTransparentMesh: 0
+--- !u!114 &582206339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582206335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0806273f2a926f4cbda7cd234786572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRollToggle:
+  - {fileID: 824069596}
+  - {fileID: 211044856}
+  capture: 0
+  sabotage: 0
 --- !u!1 &624598039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,7 +2425,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 148, y: 0}
+  m_AnchoredPosition: {x: 125, y: 0}
   m_SizeDelta: {x: 600, y: 464}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &655473177
@@ -2585,6 +2639,7 @@ GameObject:
   - component: {fileID: 682034060}
   - component: {fileID: 682034062}
   - component: {fileID: 682034061}
+  - component: {fileID: 682034063}
   m_Layer: 5
   m_Name: PlayerSlot1
   m_TagString: Untagged
@@ -2651,6 +2706,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682034059}
   m_CullTransparentMesh: 0
+--- !u!114 &682034063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682034059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0806273f2a926f4cbda7cd234786572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRollToggle:
+  - {fileID: 519071156}
+  - {fileID: 2049725776}
+  capture: 0
+  sabotage: 0
 --- !u!1 &699072608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2879,8 +2951,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 1850855378}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3144,8 +3216,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 582206339}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3557,6 +3629,7 @@ GameObject:
   - component: {fileID: 930130395}
   - component: {fileID: 930130397}
   - component: {fileID: 930130396}
+  - component: {fileID: 930130398}
   m_Layer: 5
   m_Name: PlayerSlot4
   m_TagString: Untagged
@@ -3622,6 +3695,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930130394}
   m_CullTransparentMesh: 0
+--- !u!114 &930130398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930130394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0806273f2a926f4cbda7cd234786572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRollToggle:
+  - {fileID: 1882656616}
+  - {fileID: 508170034}
+  capture: 0
+  sabotage: 0
 --- !u!1 &933468288
 GameObject:
   m_ObjectHideFlags: 0
@@ -3648,7 +3738,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933468288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 103.029465}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 975652697}
@@ -4560,8 +4650,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 1919470221}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4686,14 +4776,22 @@ MonoBehaviour:
   - 
   - 
   playerRolls:
-  - {fileID: 1442470848}
-  - {fileID: 1693848475}
-  - {fileID: 655473179}
-  - {fileID: 951485460}
-  - {fileID: 262913282}
-  - {fileID: 208058196}
-  - {fileID: 1448055333}
-  - {fileID: 523056779}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   playerSlots:
   - {fileID: 682034059}
   - {fileID: 1919470217}
@@ -4706,6 +4804,8 @@ MonoBehaviour:
   playerCounterUI: {fileID: 933468288}
   blueCaptureCount: 0
   blueSabotageCount: 0
+  redCaptureCount: 0
+  redSabotageCount: 0
 --- !u!4 &1205178651
 Transform:
   m_ObjectHideFlags: 0
@@ -5035,8 +5135,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 1850855378}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5365,8 +5465,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 1865580738}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5808,8 +5908,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 1865580738}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6826,7 +6926,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807370919}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 103.029465}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1404154485}
@@ -7023,6 +7123,7 @@ GameObject:
   - component: {fileID: 1850855375}
   - component: {fileID: 1850855377}
   - component: {fileID: 1850855376}
+  - component: {fileID: 1850855378}
   m_Layer: 5
   m_Name: PlayerSlot3
   m_TagString: Untagged
@@ -7088,6 +7189,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850855374}
   m_CullTransparentMesh: 0
+--- !u!114 &1850855378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850855374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0806273f2a926f4cbda7cd234786572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRollToggle:
+  - {fileID: 714279395}
+  - {fileID: 1290174734}
+  capture: 0
+  sabotage: 0
 --- !u!1 &1865580734
 GameObject:
   m_ObjectHideFlags: 0
@@ -7099,6 +7217,7 @@ GameObject:
   - component: {fileID: 1865580735}
   - component: {fileID: 1865580737}
   - component: {fileID: 1865580736}
+  - component: {fileID: 1865580738}
   m_Layer: 5
   m_Name: PlayerSlot5
   m_TagString: Untagged
@@ -7164,6 +7283,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865580734}
   m_CullTransparentMesh: 0
+--- !u!114 &1865580738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865580734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0806273f2a926f4cbda7cd234786572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRollToggle:
+  - {fileID: 1395272272}
+  - {fileID: 1456660828}
+  capture: 0
+  sabotage: 0
 --- !u!1 &1882656614
 GameObject:
   m_ObjectHideFlags: 0
@@ -7248,8 +7384,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 930130398}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7430,6 +7566,7 @@ GameObject:
   - component: {fileID: 1919470218}
   - component: {fileID: 1919470220}
   - component: {fileID: 1919470219}
+  - component: {fileID: 1919470221}
   m_Layer: 5
   m_Name: PlayerSlot2
   m_TagString: Untagged
@@ -7495,6 +7632,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919470217}
   m_CullTransparentMesh: 0
+--- !u!114 &1919470221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919470217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0806273f2a926f4cbda7cd234786572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRollToggle:
+  - {fileID: 2146340254}
+  - {fileID: 1136442166}
+  capture: 0
+  sabotage: 0
 --- !u!1 &1923469802
 GameObject:
   m_ObjectHideFlags: 0
@@ -8034,8 +8188,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 119822070}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8204,8 +8358,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 682034063}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8300,8 +8454,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 119822070}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8396,8 +8550,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1205178650}
-        m_MethodName: BlueCapturePlus
+      - m_Target: {fileID: 1919470221}
+        m_MethodName: OnRollToggled
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
