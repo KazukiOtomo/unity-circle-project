@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -426,6 +426,7 @@ GameObject:
   - component: {fileID: 259350256}
   - component: {fileID: 259350255}
   - component: {fileID: 259350254}
+  - component: {fileID: 259350260}
   m_Layer: 0
   m_Name: PlayerEx2
   m_TagString: Player
@@ -620,6 +621,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &259350260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259350253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f2008efe5d16a4394773f837e20caa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stick: []
+  gyro: {x: 0, y: 0, z: 0}
+  accel: {x: 0, y: 0, z: 0}
+  jc_ind: 1
+  orientation: {x: 0, y: 0, z: 0, w: 0}
+  isLeft: 0
 --- !u!1 &285158386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,7 +1178,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664071300}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27b9ce32f0f3d3743a8e21a9852a8b73, type: 3}
   m_Name: 
@@ -1904,7 +1923,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 54.24758
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1929,7 +1948,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.09563916, y: 0.000000017832123, z: -0.000000001713303, w: 0.9954161}
+  m_LocalRotation: {x: 0.095639154, y: 0.000000020687922, z: -0.000000001987687, w: 0.9954161}
   m_LocalPosition: {x: 22, y: 5.77, z: -29.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2091,7 +2110,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983518922}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &983518924
 Camera:
   m_ObjectHideFlags: 0
@@ -2695,6 +2714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1468859772}
+  - component: {fileID: 1468859773}
   m_Layer: 0
   m_Name: Stages
   m_TagString: Untagged
@@ -2718,6 +2738,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1468859773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468859771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405bad29b2b998c408059182c189d9e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnableIMU: 1
+  EnableLocalize: 1
 --- !u!1 &1508791636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,7 +3047,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7794118, y: 1}
+    m_SensorSize: {x: 2.2546585, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3029,7 +3063,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665396267}
-  m_LocalRotation: {x: 0.09563916, y: 0.000000017832123, z: -0.000000001713303, w: 0.9954161}
+  m_LocalRotation: {x: 0.095639154, y: 0.000000020687922, z: -0.000000001987687, w: 0.9954161}
   m_LocalPosition: {x: 22, y: 5.77, z: -29.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3653,6 +3687,7 @@ GameObject:
   - component: {fileID: 716199655}
   - component: {fileID: 716199654}
   - component: {fileID: 919132148186865859}
+  - component: {fileID: 919132148186865860}
   m_Layer: 0
   m_Name: PlayerEx1
   m_TagString: Player
@@ -3682,6 +3717,24 @@ MonoBehaviour:
   feetChecker: {fileID: 1857524554}
   isGround: 0
   isJumppad: 0
+--- !u!114 &919132148186865860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148186865858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f2008efe5d16a4394773f837e20caa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stick: []
+  gyro: {x: 0, y: 0, z: 0}
+  accel: {x: 0, y: 0, z: 0}
+  jc_ind: 0
+  orientation: {x: 0, y: 0, z: 0, w: 0}
+  isLeft: 0
 --- !u!4 &1013897909994151653
 Transform:
   m_ObjectHideFlags: 0

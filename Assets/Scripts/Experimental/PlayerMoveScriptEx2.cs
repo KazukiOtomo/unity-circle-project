@@ -24,6 +24,8 @@ public class PlayerMoveScriptEx2: MonoBehaviour
 
     private Animator animator;
 
+    private Joycon _joycon;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -36,6 +38,7 @@ public class PlayerMoveScriptEx2: MonoBehaviour
 
     private void Update()
     {
+        if (_joycon == null)_joycon = GetComponent<JoyconDemo>().getJoycon();
         isGround = feetChecker.IsGround;
         isJumppad = feetChecker.IsJumppad;
         
@@ -60,8 +63,10 @@ public class PlayerMoveScriptEx2: MonoBehaviour
     
     private void Move()
     {
-        float move = Input.GetAxis("Horizontal 2");
-        bool jump = Input.GetButton("Jump 2");
+        float move = _joycon.GetButton(Joycon.Button.DPAD_DOWN) ? 1f:
+            _joycon.GetButton(Joycon.Button.DPAD_UP)?-1f:0;
+        bool jump = _joycon.GetButton(Joycon.Button.DPAD_RIGHT) || _joycon.GetButton(Joycon.Button.DPAD_LEFT);
+        Debug.LogWarning("2:"+jump);
         
         if (isGround && jump)
         {
@@ -77,7 +82,7 @@ public class PlayerMoveScriptEx2: MonoBehaviour
         float jumpTime=0f;
         while (jumpTime <= 0.25f)
         {
-            bool jump = Input.GetButton("Jump 2");
+            bool jump = _joycon.GetButton(Joycon.Button.DPAD_RIGHT) || _joycon.GetButton(Joycon.Button.DPAD_LEFT);
             if(jump) rb.velocity = new Vector3(rb.velocity.x, playerJumpPower, 0f);
             jumpTime += Time.deltaTime;
             yield return null;
