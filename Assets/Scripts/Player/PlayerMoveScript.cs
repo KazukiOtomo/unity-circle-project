@@ -8,7 +8,7 @@ public class PlayerMoveScript : MonoBehaviour
     [SerializeField] private int player = 1;
 
     [SerializeField] private Vector3 startPoint = new Vector3(0f, 2f, 0f);
-    [SerializeField] private float deathHeight = -40;
+    [SerializeField] private float deathHeight = -20;
     [SerializeField] private float playerSpeed = 15;
     [SerializeField] private float playerJumpPower = 14;
     [SerializeField] private float gravityPower = 16;
@@ -104,7 +104,6 @@ public class PlayerMoveScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Dead"))
         {
             Death();
-            Debug.LogWarning("Deadtag-death");
         }
 
         //ゴールの処理
