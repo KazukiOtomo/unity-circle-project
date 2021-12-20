@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerMoveScriptEx : MonoBehaviour
+public class PlayerMoveScript : MonoBehaviour
 {
     [SerializeField] private int player = 1;
 
@@ -20,7 +20,8 @@ public class PlayerMoveScriptEx : MonoBehaviour
 
     [SerializeField] private bool isGround;
     [SerializeField] private bool isJumppad = false;
-
+    [SerializeField] private bool isHorizontalMovingFloor = false;
+ 
     private Rigidbody rb;
     private new AudioSource audio;
 
@@ -41,12 +42,16 @@ public class PlayerMoveScriptEx : MonoBehaviour
     {
         isGround = feetChecker.IsGround;
         isJumppad = feetChecker.IsJumppad;
+        isHorizontalMovingFloor = feetChecker.IsHorizontalMovingFloor;
 
         //プレイヤー操作
         Move();
 
         //落下死
-        if (transform.position.y <= deathHeight) Death();
+        if (transform.position.y <= deathHeight)
+        {
+            Death();
+        }
 
         //トランポリン
         if (isJumppad)
@@ -74,6 +79,11 @@ public class PlayerMoveScriptEx : MonoBehaviour
             feetChecker.IsGround = false;
         }
         rb.velocity = new Vector3(move * playerSpeed, rb.velocity.y, 0f);
+
+        if (isHorizontalMovingFloor)
+        {
+            rb.velocity += feetChecker.MovingFloor();
+        }
     }
 
     IEnumerator JumpingMove()
@@ -94,6 +104,7 @@ public class PlayerMoveScriptEx : MonoBehaviour
         if (collision.gameObject.CompareTag("Dead"))
         {
             Death();
+            Debug.LogWarning("Deadtag-death");
         }
 
         //ゴールの処理

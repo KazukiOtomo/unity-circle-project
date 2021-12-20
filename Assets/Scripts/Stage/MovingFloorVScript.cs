@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoovingFloorHScript : MonoBehaviour
+public class MovingFloorVScript : MonoBehaviour
 {
     [SerializeField] private float speed = 1.0f;
     [SerializeField] private float diff = 3.0f;
@@ -17,8 +17,9 @@ public class MoovingFloorHScript : MonoBehaviour
     private void Start()
     {
         basePosition = this.gameObject.transform.position;
+        //rb = this.gameObject.GetComponent<Rigidbody>();
 
-        targetP = basePosition + new Vector3(diff, 0f, 0f); targetN = basePosition - new Vector3(diff, 0f, 0f);
+        targetP = basePosition + new Vector3(0f, diff, 0f); targetN = basePosition - new Vector3(0f, diff, 0f);
     }
 
     private void Update()

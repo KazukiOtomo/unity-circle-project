@@ -995,7 +995,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.09563916, y: -0.000000017843593, z: 0.0000000017144048, w: 0.9954161}
+  m_LocalRotation: {x: 0.095639154, y: -0.000000019579456, z: 0.0000000018811859,
+    w: 0.9954161}
   m_LocalPosition: {x: 47, y: 5.77, z: -29.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2003,7 +2004,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7782102, y: 1}
+    m_SensorSize: {x: 2.4444444, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2019,7 +2020,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665396267}
-  m_LocalRotation: {x: 0.09563916, y: -0.000000017843593, z: 0.0000000017144048, w: 0.9954161}
+  m_LocalRotation: {x: 0.095639154, y: -0.000000019579456, z: 0.0000000018811859,
+    w: 0.9954161}
   m_LocalPosition: {x: 47, y: 5.77, z: -29.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2392,7 +2394,12 @@ PrefabInstance:
     - target: {fileID: 4452997129565664479, guid: 02c14d40a06d35e4cbb86f3da9f3cf1c,
         type: 3}
       propertyPath: m_Name
-      value: Mooving Floor H
+      value: Moving Floor H
+      objectReference: {fileID: 0}
+    - target: {fileID: 4452997129565664479, guid: 02c14d40a06d35e4cbb86f3da9f3cf1c,
+        type: 3}
+      propertyPath: m_TagString
+      value: HorizontalMovingFloor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02c14d40a06d35e4cbb86f3da9f3cf1c, type: 3}
@@ -2461,7 +2468,7 @@ PrefabInstance:
     - target: {fileID: 5006731085179661366, guid: e13346cc479523c45982a8d357f323c3,
         type: 3}
       propertyPath: m_Name
-      value: Mooving Floor V
+      value: Moving Floor V
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e13346cc479523c45982a8d357f323c3, type: 3}
