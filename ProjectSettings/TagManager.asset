@@ -4,11 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Dead
   - Ground
   - Jumppad
   - RollToggle
   - HorizontalMovingFloor
+=======
+  - New tag
+  - Dead
+>>>>>>> bcb1e125aaccadec7939b9491ffa537c941fe4ad
   layers:
   - Default
   - TransparentFX
@@ -45,4 +50,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer
+    uniqueID: 2388478189
     locked: 0
