@@ -22,8 +22,8 @@ public class Falling : MonoBehaviour
             if ((GameObject.FindGameObjectWithTag("Player").transform.position.x < this.transform.position.x -Range && GameObject.FindGameObjectWithTag("Player").transform.position.y<this.transform.position.y) ||
             (GameObject.FindGameObjectWithTag("Player").transform.position.x < this.transform.position.x +Range && GameObject.FindGameObjectWithTag("Player").transform.position.y < this.transform.position.y))
             {
-                this.gameObject.transform.Translate(0,  -1*FallSpeed,0);
-            Destroy(this.gameObject, DeleteTime);
+                this.gameObject.transform.Translate(0,  -0.1f*FallSpeed,0);
+                Destroy(this.gameObject, DeleteTime);
             }
         
     }

@@ -27,8 +27,10 @@ public class PlayerMoveScript : MonoBehaviour
 
     private Animator animator;
     
+    private const float Delta =0.1f;
 
-    private void Start()
+
+        private void Start()
     {
         rb = GetComponent<Rigidbody>();
         audio = GetComponent<AudioSource>();
@@ -71,6 +73,11 @@ public class PlayerMoveScript : MonoBehaviour
         float move = InputController.instance.GETMove(player);
         bool jump = InputController.instance.GETJump(player);
         //Inputcontroller.getMove[player] 
+
+        if (Mathf.Abs(move) > Delta)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 90f*Mathf.Sign(move), 0));
+        }
 
         if (isGround && jump)
         {
