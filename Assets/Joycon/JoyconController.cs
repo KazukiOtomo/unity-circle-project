@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JoyconDemo : MonoBehaviour {
+public class JoyconContriller : MonoBehaviour {
 	
 	private List<Joycon> joycons;
 
@@ -85,6 +86,4 @@ public class JoyconDemo : MonoBehaviour {
             gameObject.transform.rotation = orientation;
         }
     }
-    
-    
 }
