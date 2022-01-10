@@ -7,6 +7,7 @@ public class MovingFloorVScript : MonoBehaviour
     [SerializeField] private float speed = 1.0f;
     [SerializeField] private float diff = 3.0f;
     [SerializeField] private bool startDir = true;
+    [SerializeField] private float intercept=0f;
 
     //private Rigidbody rb;
 
@@ -19,7 +20,10 @@ public class MovingFloorVScript : MonoBehaviour
         basePosition = this.gameObject.transform.position;
         //rb = this.gameObject.GetComponent<Rigidbody>();
 
-        targetP = basePosition + new Vector3(0f, diff, 0f); targetN = basePosition - new Vector3(0f, diff, 0f);
+        targetP = basePosition + new Vector3(0f, diff, 0f); 
+        targetN = basePosition - new Vector3(0f, diff, 0f);
+
+        transform.position += new Vector3(0f, intercept * diff, 0f);
     }
 
     private void Update()

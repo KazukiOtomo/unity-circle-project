@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class JoyconController : MonoBehaviour {
+public class JoyconSelectController : MonoBehaviour {
 	
 	private List<Joycon> joycons;
 
@@ -58,7 +58,7 @@ public class JoyconController : MonoBehaviour {
 				_im.color=Color.red;
 				int i = PlayerPrefs.GetInt("PlayerSelected");
 				PlayerPrefs.SetInt("PlayerSelected",i+1);
-				Debug.LogWarning(PlayerPrefs.GetInt("PlayerSelected"));
+				//Debug.LogWarning(PlayerPrefs.GetInt("PlayerSelected"));
 				source.PlayOneShot(decided,1);
 			}
 			
@@ -67,7 +67,7 @@ public class JoyconController : MonoBehaviour {
 				_im.color=Color.white;
 				int i = PlayerPrefs.GetInt("PlayerSelected");
 				PlayerPrefs.SetInt("PlayerSelected",i-1);
-				Debug.LogWarning(PlayerPrefs.GetInt("PlayerSelected"));
+				//Debug.LogWarning(PlayerPrefs.GetInt("PlayerSelected"));
 				source.PlayOneShot(cancel,1);
 			}
             
