@@ -90,7 +90,7 @@ public class JoyconOverlay : MonoBehaviour
             GUILayout.BeginVertical (GUILayout.Width (480));
             GUILayout.Label (name);
             GUILayout.Label (key + "：振動");
-            GUILayout.Label ("押されているボタン：" + button);
+            GUILayout.Label ("押されているボタン：" + FixGotButton(button,isLeft));
             GUILayout.Label (String.Format("スティック：({0}, {1})", stick[0], stick[1]));
             GUILayout.Label ("ジャイロ：" + gyro);
             GUILayout.Label ("加速度：" + accel);
@@ -107,5 +107,25 @@ public class JoyconOverlay : MonoBehaviour
         if (m_joycons == null || m_joycons.Count <= 0) return;
         m_joyconL = m_joycons.Find (c => c.isLeft);
         m_joyconR = m_joycons.Find (c => !c.isLeft);
+    }
+    
+    private Joycon.Button? FixGotButton(Joycon.Button? b,bool isLeft)
+    {
+        if (isLeft)
+        {
+            if (b == Joycon.Button.DPAD_LEFT) return Joycon.Button.DPAD_DOWN;
+            if (b == Joycon.Button.DPAD_UP) return Joycon.Button.DPAD_LEFT;
+            if (b == Joycon.Button.DPAD_RIGHT) return Joycon.Button.DPAD_UP;
+            if (b == Joycon.Button.DPAD_DOWN) return Joycon.Button.DPAD_RIGHT;
+        }
+        else
+        {
+            if (b == Joycon.Button.DPAD_RIGHT) return Joycon.Button.DPAD_DOWN;
+            if (b == Joycon.Button.DPAD_DOWN) return Joycon.Button.DPAD_LEFT;
+            if (b == Joycon.Button.DPAD_LEFT) return Joycon.Button.DPAD_UP;
+            if (b == Joycon.Button.DPAD_UP) return Joycon.Button.DPAD_RIGHT;
+        }
+
+        return b;
     }
 }

@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class JoyconContriller : MonoBehaviour {
+public class JoyconController : MonoBehaviour {
 	
 	private List<Joycon> joycons;
 
@@ -13,77 +14,88 @@ public class JoyconContriller : MonoBehaviour {
     public Vector3 accel;
     public int jc_ind = 0;
     public Quaternion orientation;
+    private RectTransform _rt;
+    private Image _im;
+    private bool isLeft=false;
+
+    public AudioClip decided;
+    public AudioClip cancel;
+    public AudioSource source;
 
     void Start ()
     {
         gyro = new Vector3(0, 0, 0);
         accel = new Vector3(0, 0, 0);
-        // get the public Joycon array attached to the JoyconManager in scene
         joycons = JoyconManager.Instance.j;
 		if (joycons.Count < jc_ind+1){
 			Destroy(gameObject);
 		}
-	}
+		PlayerPrefs.SetInt("PlayingPersons",joycons.Count);
+
+		_rt = GetComponent<RectTransform>();
+		_im = GetComponent<Image>();
+		_im.color=Color.white;
+
+		PlayerPrefs.SetInt("PlayerSelected", 0);
+    }
     
     void Update () {
-		// make sure the Joycon only gets checked if attached
 		if (joycons.Count > 0)
         {
 			Joycon j = joycons [jc_ind];
-            if (j.GetButtonDown(Joycon.Button.SHOULDER_2))
-            {
-				Debug.Log ("Shoulder button 2 pressed");
-				// GetStick returns a 2-element vector with x/y joystick components
-				Debug.Log(string.Format("Stick x: {0:N} Stick y: {1:N}",j.GetStick()[0],j.GetStick()[1]));
+			isLeft = j.isLeft;
+			stick = j.GetStick();
+			if (Mathf.Abs(stick[0]) > 0.5f)
+			{
+				_rt.anchoredPosition = 
+					new Vector2(_rt.anchoredPosition.x,
+						FixInputStick() * 120 * Mathf.Sign(stick[0]));
+			}
+
+			if (j.GetButtonDown(FixInputButton(Joycon.Button.DPAD_RIGHT)) 
+			    && _im.color==Color.white)
+			{
+				_im.color=Color.red;
+				int i = PlayerPrefs.GetInt("PlayerSelected");
+				PlayerPrefs.SetInt("PlayerSelected",i+1);
+				Debug.LogWarning(PlayerPrefs.GetInt("PlayerSelected"));
+				source.PlayOneShot(decided,1);
+			}
+			
+			if (j.GetButtonDown(Joycon.Button.SHOULDER_1) & _im.color==Color.red)
+			{
+				_im.color=Color.white;
+				int i = PlayerPrefs.GetInt("PlayerSelected");
+				PlayerPrefs.SetInt("PlayerSelected",i-1);
+				Debug.LogWarning(PlayerPrefs.GetInt("PlayerSelected"));
+				source.PlayOneShot(cancel,1);
+			}
             
-				// Joycon has no magnetometer, so it cannot accurately determine its yaw value.
-				// Joycon.Recenter allows the user to reset the yaw value.
-				j.Recenter ();
-			}
-			if (j.GetButtonUp (Joycon.Button.SHOULDER_2))
-			{
-				Debug.Log ("Shoulder button 2 released");
-			}
-			if (j.GetButton (Joycon.Button.SHOULDER_2))
-			{
-				Debug.Log ("Shoulder button 2 held");
-			}
-
-			if (j.GetButtonDown (Joycon.Button.DPAD_DOWN)) {
-				Debug.Log ("Rumble");
-
-				// Rumble for 200 milliseconds, with low frequency rumble at 160 Hz
-				// and high frequency rumble at 320 Hz. For more information check:
-				// https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/master/rumble_data_table.md
-
-				j.SetRumble (160, 320, 0.6f, 200);
-
-				// The last argument (time) in SetRumble is optional.
-				// Call it with three arguments to turn it on without telling it when to turn off.
-                // (Useful for dynamically changing rumble values.)
-				// Then call SetRumble(0,0,0) when you want to turn it off.
-			}
-
-            stick = j.GetStick();
-
-            // Gyro values: x, y, z axis values (in radians per second)
-            gyro = j.GetGyro();
-
-            // Accel values:  x, y, z axis values (in Gs)
-            accel = j.GetAccel();
-            if (accel.sqrMagnitude > 5)
-            {
-	            GetComponent<Rigidbody>().AddForce(accel, ForceMode.Acceleration);
-	            //GetComponent<Rigidbody>().AddForce();
-            }
-
-            orientation = j.GetVector();
-			if (j.GetButton(Joycon.Button.DPAD_UP)){
-				gameObject.GetComponent<Renderer>().material.color = Color.red;
-			} else{
-				gameObject.GetComponent<Renderer>().material.color = Color.blue;
-			}
-            gameObject.transform.rotation = orientation;
         }
+    }
+
+    private float FixInputStick()
+    {
+	    return isLeft ? 1f : -1f;
+    }
+
+    private Joycon.Button FixInputButton(Joycon.Button b)
+    {
+	    if (isLeft)
+	    {
+		    if (b == Joycon.Button.DPAD_DOWN) return Joycon.Button.DPAD_LEFT;
+		    if (b == Joycon.Button.DPAD_LEFT) return Joycon.Button.DPAD_UP;
+		    if (b == Joycon.Button.DPAD_UP) return Joycon.Button.DPAD_RIGHT;
+		    if (b == Joycon.Button.DPAD_RIGHT) return Joycon.Button.DPAD_DOWN;
+	    }
+	    else
+	    {
+		    if (b == Joycon.Button.DPAD_DOWN) return Joycon.Button.DPAD_RIGHT;
+		    if (b == Joycon.Button.DPAD_LEFT) return Joycon.Button.DPAD_DOWN;
+		    if (b == Joycon.Button.DPAD_UP) return Joycon.Button.DPAD_LEFT;
+		    if (b == Joycon.Button.DPAD_RIGHT) return Joycon.Button.DPAD_UP;
+	    }
+
+	    return b;
     }
 }

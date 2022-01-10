@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerSlotScript : MonoBehaviour
 {
-    [SerializeField] private Toggle[] playerRollToggle = new Toggle[2];
-    [SerializeField] private bool capture = false;
-    [SerializeField] private bool sabotage = false;
+    //[SerializeField] private Toggle[] playerRollToggle = new Toggle[2];
+    //[SerializeField] private bool capture = false;
+    //[SerializeField] private bool sabotage = false;
 
     private void Start()
     {
+        /*
         if(playerRollToggle[0].isOn == true)
         {
             capture = true;
@@ -35,5 +36,6 @@ public class PlayerSlotScript : MonoBehaviour
             sabotage = true;
             capture = false;
         }
+        */
     }
 }
