@@ -7,8 +7,8 @@ public class PlayerMoveScript : MonoBehaviour
 {
     [SerializeField] private int player = 1;
 
-    [SerializeField] private Vector3 startPoint = new Vector3(0f, 2f, 0f);
-    [SerializeField] private float deathHeight = -20;
+    [SerializeField] private Vector3 startPoint = new Vector3(-25f, 34f, 0f);
+    [SerializeField] private float deathHeight = -40;
     [SerializeField] private float playerSpeed = 15;
     [SerializeField] private float playerJumpPower = 14;
     [SerializeField] private float gravityPower = 16;
@@ -29,6 +29,7 @@ public class PlayerMoveScript : MonoBehaviour
     
     private const float Delta =0.1f;
 
+    [SerializeField]private InputController _ic;
 
         private void Start()
     {
@@ -70,9 +71,8 @@ public class PlayerMoveScript : MonoBehaviour
 
     private void Move()
     {
-        float move = InputController.instance.GETMove(player);
-        bool jump = InputController.instance.GETJump(player);
-        //Inputcontroller.getMove[player] 
+        float move = _ic.GetMove();
+        bool jump = _ic.GetJump();
 
         if (Mathf.Abs(move) > Delta)
         {
@@ -98,7 +98,7 @@ public class PlayerMoveScript : MonoBehaviour
         float jumpTime = 0f;
         while (jumpTime <= 0.25f)
         {
-            bool jump = InputController.instance.GETJump(player);
+            bool jump = _ic.GetJump();
             if (jump) rb.velocity = new Vector3(rb.velocity.x, playerJumpPower, 0f);
             jumpTime += Time.deltaTime;
             yield return null;
@@ -109,6 +109,11 @@ public class PlayerMoveScript : MonoBehaviour
     {
         //トラップ
         if (collision.gameObject.CompareTag("Dead"))
+        {
+            Death();
+        }
+        
+        if (collision.gameObject.CompareTag("Ghost"))
         {
             Death();
         }

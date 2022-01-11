@@ -9,6 +9,8 @@ TagManager:
   - Jumppad
   - RollToggle
   - HorizontalMovingFloor
+  - FallingTrigger
+  - Ghost
   layers:
   - Default
   - TransparentFX

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2996747222015135905}
   - component: {fileID: 2996747222015135909}
   - component: {fileID: 2996747222015135930}
+  - component: {fileID: 3668687946981770729}
   m_Layer: 0
   m_Name: Circular Saw
   m_TagString: Dead
@@ -124,3 +125,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc611c03e12d0f4688807e559ff51a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &3668687946981770729
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690896831158489177}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.017984105
+  m_Center: {x: 0.000000008381907, y: 0.0042587495, z: 0.000000022826155}

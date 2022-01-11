@@ -16,7 +16,14 @@ public class CameraSetupScript : MonoBehaviour
         foreach (GameObject p in players)
         {
             var t = p.transform;
-            cinemachineTarget.AddMember(t, 1.2f, 4);
+            cinemachineTarget.AddMember(t, 1.2f, 12);
+        }
+        players = GameObject.FindGameObjectsWithTag("Ghost");
+
+        foreach (GameObject p in players)
+        {
+            var t = p.transform;
+            cinemachineTarget.AddMember(t, 1.2f, 12);
         }
     }
 }

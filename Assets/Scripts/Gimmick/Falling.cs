@@ -1,40 +1,32 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Falling : MonoBehaviour
 {
-    public float FallSpeed = 0.5f;
-    public float Range = 1.0f;
+    public float FallSpeed = 0.1f;
+    public float Range = 0.1f;
     public float DeleteTime = 3.0f;
-    // public GameObject needler;
 
-    // Start is called before the first frame update
+    private bool flg = false;
+
+    GameObject[] p;
     void Start()
     {
-        // Player = GameObject.FindGameObjectWithTag("Player");
-
-        // Update is called once per frame
+        p = GameObject.FindGameObjectsWithTag("Player");
     }
-    void Update()
+    void LateUpdate()
     {
-
-            if ((GameObject.FindGameObjectWithTag("Player").transform.position.x < this.transform.position.x -Range && GameObject.FindGameObjectWithTag("Player").transform.position.y<this.transform.position.y) ||
-            (GameObject.FindGameObjectWithTag("Player").transform.position.x < this.transform.position.x +Range && GameObject.FindGameObjectWithTag("Player").transform.position.y < this.transform.position.y))
+        foreach(GameObject player in p){
+            if (Mathf.Abs(player.transform.position.x - transform.position.x) < Range
+                && player.transform.position.y < transform.position.y)
             {
-                this.gameObject.transform.Translate(0,  -0.1f*FallSpeed,0);
+                flg = true;
                 Destroy(this.gameObject, DeleteTime);
             }
-        
-    }
-    /*void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            
-            //Destroy(other.gameObject);
-            Destroy(this.gameObject);
         }
-       // Destroy(this.gameObject,DeleteTime);
-    }*/
+        
+        if(flg)this.gameObject.transform.Translate(0,  -0.1f*FallSpeed,0);
+    }
 }

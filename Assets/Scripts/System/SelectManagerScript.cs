@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class TitleManagerScript : MonoBehaviour
+public class SelectManagerScript : MonoBehaviour
 {
     private void Start()
     {

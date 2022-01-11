@@ -3,30 +3,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = System.Object;
 
 public class GameManagerScript : MonoBehaviour
-{
-    private int playerNumber = 2;
-    private GameObject[] teamRed;
-    private GameObject[] teamBlue;
+{ 
+    public GameObject[] penguin=new GameObject[8];
+    public GameObject[] ghost=new GameObject[8];
 
-    private void Start()
+    private void Awake()
     {
-        /*
-        foreach(GameObject i in teamRed)
+        for (var i = 0; i < SelectRepository.attackers_num.Length; i++)
         {
-
+            if (SelectRepository.attackers_num[i] == -1)
+            {
+                Destroy(penguin[i]);
+            }
+            else
+            {
+                penguin[i].GetComponent<InputController>().jc_ind = SelectRepository.attackers_num[i];
+            }
+            if (SelectRepository.defenders_num[i] == -1)
+            {
+                Destroy(ghost[i]);
+            }
+            else
+            {
+               ghost[i].GetComponent<InputController>().jc_ind = SelectRepository.defenders_num[i];
+            }
         }
-        */
     }
 
     private void Update()
     {
 
-    }
-
-    public int GETPlayerNumber()
-    {
-        return playerNumber;
     }
 }

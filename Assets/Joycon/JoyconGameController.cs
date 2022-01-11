@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class JoyconSelectController : MonoBehaviour {
+public class JoyconGameController : MonoBehaviour {
 	
 	private List<Joycon> joycons;
 
@@ -18,25 +18,18 @@ public class JoyconSelectController : MonoBehaviour {
     private RectTransform _rt;
     private Image _im;
     private bool isLeft=false;
-    private bool isDecided=false;
     [SerializeField]private int characternumber = 0;
 
-    [SerializeField]private Image picImage;
-    [SerializeField]private Image check;
-
-    public AudioClip decided;
-    public AudioClip cancel;
-    public AudioClip selecting;
+    //public AudioClip decided;
+    //public AudioClip cancel;
+    //public AudioClip selecting;
     
     public AudioSource source;
-
-    public SelectRepository sr;
 
     [SerializeField]private bool isAttacker = false;
 
     private bool selecting_flg=true;
-    private int SR_flg = 0;
-    private int SL_flg = 0;
+
 
     void Start ()
     {
@@ -51,23 +44,11 @@ public class JoyconSelectController : MonoBehaviour {
 		_rt = GetComponent<RectTransform>();
 		_im = GetComponent<Image>();
 		_im.color=Color.white;
-		check.color = new Color(1, 1, 1, 0);
 
 		isAttacker = _rt.anchoredPosition.y > 0;
 
 		PlayerPrefs.SetInt("PlayerSelected", 0);
 		characternumber = jc_ind;
-		if (!(joycons.Count < jc_ind + 1))
-		{
-			if (isAttacker)
-			{
-				picImage.sprite = sr.GetAttackers(jc_ind, 1);
-			}
-			else
-			{
-				picImage.sprite = sr.GetDefenders(jc_ind, 1);
-			}
-		}
     }
     
     
@@ -82,22 +63,12 @@ public class JoyconSelectController : MonoBehaviour {
 				_rt.anchoredPosition = 
 					new Vector2(_rt.anchoredPosition.x,
 						FixInputStick() * 120 * Mathf.Sign(stick[0]));
-				picImage.color = new Color(1,1,1,0);
 				if (selecting_flg)
 				{
-					source.PlayOneShot(selecting,0.6f);
+					//source.PlayOneShot(selecting,0.6f);
 					selecting_flg = false;
 				}
-				if (isAttacker)
-				{
-					
-					picImage.sprite = sr.GetAttackers(jc_ind,1);
-				}
-				else
-				{
-					picImage.sprite = sr.GetDefenders(jc_ind,1);
-				}
-				picImage.color = new Color(1,1,1,1);
+
 
 				isAttacker = _rt.anchoredPosition.y > 0;
 			}
@@ -106,80 +77,29 @@ public class JoyconSelectController : MonoBehaviour {
 				selecting_flg = true;
 			}
 
-			if (j.GetButtonDown(FixInputButton(Joycon.Button.DPAD_RIGHT)) && !isDecided)
+			if (j.GetButtonDown(FixInputButton(Joycon.Button.DPAD_RIGHT)))
 			{
-				isDecided = true;
-				//_im.color=Color.red;
-				check.color = new Color(1, 1, 1, 1);
 				int i = PlayerPrefs.GetInt("PlayerSelected");
 				PlayerPrefs.SetInt("PlayerSelected",i+1);
 				//Debug.LogWarning(PlayerPrefs.GetInt("PlayerSelected"));
-				source.PlayOneShot(decided,1);
+				//source.PlayOneShot(decided,1);
 			}
 			
-			if (j.GetButtonDown(FixInputButton(Joycon.Button.DPAD_DOWN)) && isDecided)
+			if (j.GetButtonDown(FixInputButton(Joycon.Button.DPAD_DOWN)))
 			{
-				isDecided = false;
-				//_im.color=Color.white;
-				check.color = new Color(1, 1, 1, 0);
+
 				int i = PlayerPrefs.GetInt("PlayerSelected");
 				PlayerPrefs.SetInt("PlayerSelected",i-1);
 				//Debug.LogWarning(PlayerPrefs.GetInt("PlayerSelected"));
-				source.PlayOneShot(cancel,1);
-			}
-
-			if (j.GetButtonDown(Joycon.Button.SR) && SR_flg>20)
-			{
-				source.PlayOneShot(selecting,0.6f);
-				if (isAttacker)
-				{
-					
-					picImage.sprite = sr.GetAttackers(jc_ind,1);
-				}
-				else
-				{
-					picImage.sprite = sr.GetDefenders(jc_ind,1);
-				}
-
-				SR_flg = 0;
-			}
-			else
-			{
-				++SR_flg;
+				//source.PlayOneShot(cancel,1);
 			}
 			
-			if (j.GetButtonDown(Joycon.Button.SL) && SL_flg>20)
-			{
-				source.PlayOneShot(selecting,0.6f);
-				if (isAttacker)
-				{
-					picImage.sprite = sr.GetAttackers(jc_ind,-1);
-				}
-				else
-				{
-					picImage.sprite = sr.GetDefenders(jc_ind,-1);
-				}
-
-				SL_flg = 0;
-				
-			}
-			else
-			{
-				++SL_flg;
-			}
         }
     }
 
     void CharacterSetup()
     {
-	    if (isAttacker)
-	    {
-		    picImage.sprite = sr.GetAttackers(jc_ind,1);
-	    }
-	    else
-	    {
-		    picImage.sprite = sr.GetDefenders(jc_ind,1);
-	    }
+
     }
 
     private float FixInputStick()
@@ -203,7 +123,6 @@ public class JoyconSelectController : MonoBehaviour {
 		    if (b == Joycon.Button.DPAD_UP) return Joycon.Button.DPAD_LEFT;
 		    if (b == Joycon.Button.DPAD_RIGHT) return Joycon.Button.DPAD_UP;
 	    }
-
 	    return b;
     }
 }

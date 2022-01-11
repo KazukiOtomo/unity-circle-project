@@ -1018,6 +1018,7 @@ GameObject:
   - component: {fileID: 3126779079341100639}
   - component: {fileID: 5443373977980509330}
   - component: {fileID: 9088698572476116895}
+  - component: {fileID: 3001675372057906962}
   m_Layer: 0
   m_Name: Penguin
   m_TagString: Player
@@ -1213,6 +1214,27 @@ MonoBehaviour:
   isGround: 0
   isJumppad: 0
   isHorizontalMovingFloor: 0
+  _ic: {fileID: 3001675372057906962}
+--- !u!114 &3001675372057906962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213230068918177114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f267cd4975652418a6410f5b095aa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stick: []
+  gyro: {x: 0, y: 0, z: 0}
+  accel: {x: 0, y: 0, z: 0}
+  jc_ind: 0
+  orientation: {x: 0, y: 0, z: 0, w: 0}
+  characternumber: 0
+  source: {fileID: 0}
+  isAttacker: 0
 --- !u!1 &8494588587179175127
 GameObject:
   m_ObjectHideFlags: 0
