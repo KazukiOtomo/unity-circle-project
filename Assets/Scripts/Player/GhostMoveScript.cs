@@ -32,6 +32,18 @@ public class GhostMoveScript : MonoBehaviour
     private void Update()
     {
         Move();
+        /*
+        float a = _ic.GetAccelMag();
+        float s=1 + (a - 1) / 20;
+        if (s < 2)
+        {
+            transform.localScale *= s;
+        }
+        else
+        {
+            transform.localScale *= 1-1/s;
+        }
+        */
     }
 
     private void Move()

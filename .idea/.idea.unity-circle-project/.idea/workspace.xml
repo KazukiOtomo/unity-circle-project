@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8d74e401-c970-4186-b563-4383540f72d0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.unity-circle-project/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.unity-circle-project/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.unity-circle-project/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.unity-circle-project/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animation.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioSource.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AudioSource.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Download.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Download.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Joycon.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Joycon.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Joycon/JoyconSelectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Joycon/JoyconSelectController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Material.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Model.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Model.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prehabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prehabs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gimmick/Falling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gimmick/Falling.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/GhostMoveScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/GhostMoveScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMoveScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMoveScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/GameManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/GameManagerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/InputController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/SelectManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/SelectManagerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/SelectRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/SelectRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SerialPortUtilityPro.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SerialPortUtilityPro.meta" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.8.0/Runtime/Behaviours/CinemachineTargetGroup.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="23F6yaVyfBWetG2woSwaugPulHP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d74e401-c970-4186-b563-4383540f72d0" name="Changes" comment="" />
+      <created>1641317745592</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641317745592</updated>
+      <workItem from="1641317753644" duration="638000" />
+      <workItem from="1641564505910" duration="3559000" />
+      <workItem from="1641650101286" duration="8092000" />
+      <workItem from="1641712013603" duration="8592000" />
+      <workItem from="1641727837532" duration="3373000" />
+      <workItem from="1641741549001" duration="1500000" />
+      <workItem from="1641780857799" duration="1701000" />
+      <workItem from="1641786007066" duration="2835000" />
+      <workItem from="1641817727281" duration="8945000" />
+      <workItem from="1641878493057" duration="23629000" />
+      <workItem from="1641909009909" duration="8251000" />
+      <workItem from="1641918536232" duration="3647000" />
+      <workItem from="1641923011779" duration="3078000" />
+      <workItem from="1641927290716" duration="1485000" />
+      <workItem from="1641946777634" duration="1000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

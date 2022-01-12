@@ -90,12 +90,25 @@ public class JoyconSelectController : MonoBehaviour {
 				}
 				if (isAttacker)
 				{
-					
 					picImage.sprite = sr.GetAttackers(jc_ind,1);
+					for (var i = 0; i < SelectRepository.defenders_num.Length; i++)
+					{
+						if (SelectRepository.defenders_num[i] == jc_ind)
+						{
+							SelectRepository.defenders_num[i] = -1;
+						}
+					}
 				}
 				else
 				{
 					picImage.sprite = sr.GetDefenders(jc_ind,1);
+					for (var i = 0; i < SelectRepository.attackers_num.Length; i++)
+					{
+						if (SelectRepository.attackers_num[i] == jc_ind)
+						{
+							SelectRepository.attackers_num[i] = -1;
+						}
+					}
 				}
 				picImage.color = new Color(1,1,1,1);
 

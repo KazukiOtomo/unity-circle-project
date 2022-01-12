@@ -15,6 +15,7 @@ public class PlayerMoveScript : MonoBehaviour
 
     public AudioClip jumpSE;
     public AudioClip jumppadSE;
+    public AudioClip damaged;
 
     [SerializeField] private FeetCheckerScript feetChecker;
 
@@ -138,7 +139,7 @@ public class PlayerMoveScript : MonoBehaviour
     private void Death()
     {
         //show something action like "GAME OVER"
-
+        audio.PlayOneShot(damaged);
         ResetPosition();
     }
 

@@ -3393,7 +3393,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.09563918, y: -0.0000000173023, z: 0.0000000016623981, w: 0.9954161}
+  m_LocalRotation: {x: 0.09563918, y: -0.000000017302343, z: 0.0000000016624023, w: 0.9954161}
   m_LocalPosition: {x: 79.2, y: 5.77, z: -29.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3732,6 +3732,11 @@ PrefabInstance:
       propertyPath: _ic
       value: 
       objectReference: {fileID: 979615454}
+    - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
+        type: 3}
+      propertyPath: damaged
+      value: 
+      objectReference: {fileID: 8300000, guid: b5c035864f3941e48ae17c650d6bbc04, type: 3}
     - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
         type: 3}
       propertyPath: deathHeight
@@ -4206,6 +4211,11 @@ PrefabInstance:
       propertyPath: _ic
       value: 
       objectReference: {fileID: 1055850102}
+    - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
+        type: 3}
+      propertyPath: damaged
+      value: 
+      objectReference: {fileID: 8300000, guid: b5c035864f3941e48ae17c650d6bbc04, type: 3}
     - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
         type: 3}
       propertyPath: deathHeight
@@ -5025,6 +5035,11 @@ PrefabInstance:
       objectReference: {fileID: 1303216360}
     - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
         type: 3}
+      propertyPath: damaged
+      value: 
+      objectReference: {fileID: 8300000, guid: b5c035864f3941e48ae17c650d6bbc04, type: 3}
+    - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
+        type: 3}
       propertyPath: deathHeight
       value: -40
       objectReference: {fileID: 0}
@@ -5207,6 +5222,11 @@ PrefabInstance:
       objectReference: {fileID: 1362506927}
     - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
         type: 3}
+      propertyPath: damaged
+      value: 
+      objectReference: {fileID: 8300000, guid: b5c035864f3941e48ae17c650d6bbc04, type: 3}
+    - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
+        type: 3}
       propertyPath: deathHeight
       value: -40
       objectReference: {fileID: 0}
@@ -5387,6 +5407,11 @@ PrefabInstance:
       propertyPath: _ic
       value: 
       objectReference: {fileID: 1386732057}
+    - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
+        type: 3}
+      propertyPath: damaged
+      value: 
+      objectReference: {fileID: 8300000, guid: b5c035864f3941e48ae17c650d6bbc04, type: 3}
     - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
         type: 3}
       propertyPath: deathHeight
@@ -6935,7 +6960,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7773913, y: 1}
+    m_SensorSize: {x: 1.7783595, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6951,7 +6976,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665396267}
-  m_LocalRotation: {x: 0.09563918, y: -0.0000000173023, z: 0.0000000016623981, w: 0.9954161}
+  m_LocalRotation: {x: 0.09563918, y: -0.000000017302343, z: 0.0000000016624023, w: 0.9954161}
   m_LocalPosition: {x: 79.2, y: 5.77, z: -29.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7637,6 +7662,11 @@ PrefabInstance:
       objectReference: {fileID: 2050701797}
     - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
         type: 3}
+      propertyPath: damaged
+      value: 
+      objectReference: {fileID: 8300000, guid: b5c035864f3941e48ae17c650d6bbc04, type: 3}
+    - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
+        type: 3}
       propertyPath: deathHeight
       value: -40
       objectReference: {fileID: 0}
@@ -8294,6 +8324,11 @@ PrefabInstance:
       objectReference: {fileID: 2132273912}
     - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
         type: 3}
+      propertyPath: damaged
+      value: 
+      objectReference: {fileID: 8300000, guid: b5c035864f3941e48ae17c650d6bbc04, type: 3}
+    - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
+        type: 3}
       propertyPath: deathHeight
       value: -40
       objectReference: {fileID: 0}
@@ -8691,6 +8726,11 @@ PrefabInstance:
       propertyPath: _ic
       value: 
       objectReference: {fileID: 5873267954229480285}
+    - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
+        type: 3}
+      propertyPath: damaged
+      value: 
+      objectReference: {fileID: 8300000, guid: b5c035864f3941e48ae17c650d6bbc04, type: 3}
     - target: {fileID: 9088698572476116895, guid: 1ef55f42a9af00f4dbba42cc5ea19e6a,
         type: 3}
       propertyPath: deathHeight

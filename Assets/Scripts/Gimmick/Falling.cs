@@ -14,10 +14,11 @@ public class Falling : MonoBehaviour
     GameObject[] p;
     void Start()
     {
-        p = GameObject.FindGameObjectsWithTag("Player");
+        
     }
     void LateUpdate()
     {
+        if(p==null) p = GameObject.FindGameObjectsWithTag("Player");
         foreach(GameObject player in p){
             if (Mathf.Abs(player.transform.position.x - transform.position.x) < Range
                 && player.transform.position.y < transform.position.y)

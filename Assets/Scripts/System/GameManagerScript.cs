@@ -12,6 +12,8 @@ public class GameManagerScript : MonoBehaviour
 
     private void Awake()
     {
+        Debug.LogWarning(SelectRepository.attackers_num);
+        Debug.LogWarning(SelectRepository.defenders_num);
         for (var i = 0; i < SelectRepository.attackers_num.Length; i++)
         {
             if (SelectRepository.attackers_num[i] == -1)

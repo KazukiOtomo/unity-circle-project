@@ -80,6 +80,19 @@ public class InputController : MonoBehaviour
 
         return 0f;
     }
+    public float GetAccelMag()
+    {
+        if (joycons.Count > 0)
+        {
+            Joycon j = joycons[jc_ind];
+            isLeft = j.isLeft;
+            stick = j.GetStick();
+            return j.GetAccel().sqrMagnitude;
+
+        }
+
+        return 0f;
+    }
     
     private float FixInputStick()
     {
