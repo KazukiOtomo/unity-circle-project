@@ -20,10 +20,6 @@ public class JoyconGameController : MonoBehaviour {
     private bool isLeft=false;
     [SerializeField]private int characternumber = 0;
 
-    //public AudioClip decided;
-    //public AudioClip cancel;
-    //public AudioClip selecting;
-    
     public AudioSource source;
 
     [SerializeField]private bool isAttacker = false;

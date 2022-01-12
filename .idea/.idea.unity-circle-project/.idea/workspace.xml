@@ -2,30 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d74e401-c970-4186-b563-4383540f72d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.unity-circle-project/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.unity-circle-project/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.unity-circle-project/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.unity-circle-project/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animation.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AudioSource.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AudioSource.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Download.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Download.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Images.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Joycon.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Joycon.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Joycon/JoyconSelectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Joycon/JoyconSelectController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Model.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Model.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prehabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prehabs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.unity-circle-project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.unity-circle-project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Joycon/JoyconGameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Joycon/JoyconGameController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gimmick/Falling.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gimmick/Falling.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Result.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Result.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/GhostMoveScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/GhostMoveScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMoveScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMoveScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/GameManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/GameManagerScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/InputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/InputController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/SelectManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/SelectManagerScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/SelectRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/SelectRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SerialPortUtilityPro.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SerialPortUtilityPro.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/System/ResultManagerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/System/ResultManagerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +80,7 @@
       <workItem from="1641923011779" duration="3078000" />
       <workItem from="1641927290716" duration="1485000" />
       <workItem from="1641946777634" duration="1000" />
+      <workItem from="1641946917694" duration="6591000" />
     </task>
     <servers />
   </component>
